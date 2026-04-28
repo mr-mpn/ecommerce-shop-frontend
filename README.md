@@ -2,6 +2,10 @@
 
 A React application with authentication, product catalog, and admin panel.
 
+## Screenshot
+
+![App Screenshot](pics/screenshot1.png)
+
 ## Features
 
 - **Authentication**: JWT-based login system with role-based access
