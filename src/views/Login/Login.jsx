@@ -25,7 +25,7 @@ const Login = () => {
       console.log('Attempting login with:', { username, password: '[REDACTED]' })
       
       // Call your backend login API with username/password
-      const response = await fetch('http://localhost:3000/dev/authLoginAdmin', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/authLoginAdmin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
