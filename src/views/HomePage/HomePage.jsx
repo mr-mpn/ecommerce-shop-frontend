@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { ItemCard, Navigation } from '../../components';
 import { fetchItems } from '../../handlers';
 import './HomePage.css';
+import springStyle from '../../../assets/Spring-style.png'
+
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -103,16 +105,15 @@ const HomePage = () => {
 
   return (
     <>
+      {/* Navigation Bar on the top */}
       <Navigation />
+
+      {/* Header banner right under nav */}
+      <header className="items-header">
+        <img src={springStyle} alt="" className="header-banner" />
+      </header>
+
       <div className="items-container">
-        <header className="items-header">
-          <div className="header-content">
-            <div>
-              <h1>Our Products</h1>
-              <p>Discover our amazing collection of items</p>
-            </div>
-          </div>
-        </header>
         
         {/* Category Filter */}
         <div className="filter-section">

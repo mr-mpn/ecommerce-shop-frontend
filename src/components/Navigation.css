@@ -1,6 +1,8 @@
 .navigation {
-  background: white;
-  border-bottom: 1px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
@@ -8,7 +10,7 @@
 }
 
 .nav-container {
-  max-width: 1024px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: var(--space-4) var(--space-6);
   display: flex;
