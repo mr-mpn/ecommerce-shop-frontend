@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import './Navigation.css';
+import logo from '../../assets/logo.png'
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -19,8 +20,7 @@ const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="nav-container">
-        <div className="nav-buttons">
-          {/* Always show Homepage and Offers */}
+        <div className="nav-left">
           <button
             onClick={() => handleNavigation('/')}
             className={`nav-button ${location.pathname === '/' ? 'active' : ''}`}
@@ -34,9 +34,14 @@ const Navigation = () => {
           >
             Offers
           </button>
-          
-          {/* Show admin controls only if user is authenticated and is admin */}
-          {isAuthenticated() && user?.role === 'admin' && (
+        </div>
+
+        <div className="nav-center">
+          <img src={logo} alt="Logo" className="nav-logo" />
+        </div>
+
+        <div className="nav-right">
+          {isAuthenticated() && user?.role === 'admin' ? (
             <>
               <button
                 onClick={() => handleNavigation('/admin')}
@@ -52,7 +57,18 @@ const Navigation = () => {
                 Logout
               </button>
             </>
-          )}
+            ):(
+            <>
+              <button
+                onClick={() => handleNavigation('/login')}
+                className={`nav-button ${location.pathname === '/login' ? 'active' : ''}`}
+              >
+                Login
+              </button>
+            
+            </>
+            )
+          }
         </div>
       </div>
     </nav>
