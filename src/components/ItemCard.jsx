@@ -19,11 +19,12 @@ const ItemCard = ({ item }) => {
       </div>
       <div className="item-content">
         <h3 className="item-name">{item.name}</h3>
-        <h3 className="item-name">{item.category}</h3>
+        {/*<h3 className="item-name">{item.category}</h3>*/}
         <p className="item-description">{item.description}</p>
         <div className="item-price">
-          <span className="price">price{item.price}</span>
-          <span className="currency">{item.currency}</span>
+          <span className="price">{item.price}</span>
+          <span className="currency">{item.currency === 'USD' && '$'}</span>
+          <span className="currency">{item.currency === 'EUR' && '€'}</span>
         </div>
       </div>
     </div>

@@ -61,7 +61,7 @@ const Navigation = () => {
             <>
               <button
                 onClick={() => handleNavigation('/login')}
-                className={`nav-button ${location.pathname === '/login' ? 'active' : ''}`}
+                className="nav-button login-button"
               >
                 Login
               </button>
